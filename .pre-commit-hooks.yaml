@@ -79,6 +79,22 @@
     pass_filenames: true
 
 # ==============================================================================
+# go-lines
+#   * File-based
+#   * Executes if any .go files modified
+# NOTES:
+#   Replaces go-fmt and go-imports
+# ==============================================================================
+-   id: go-lines
+    name: 'go-lines'
+    entry: go-lines.sh
+    types: [go]
+    exclude: '(^|/)vendor/'
+    language: 'script'
+    description: "Run 'golines -l -m 80 --dry-run [$ARGS] $FILE' for each staged .go file"
+    pass_filenames: true
+
+# ==============================================================================
 # go-fmt
 #   * File-based
 #   * Executes if any .go files modified
